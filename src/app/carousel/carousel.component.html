@@ -1,1 +1,48 @@
-<p>carousel works!</p>
+<div id="carousel" class="carousel">
+    <!-- Indicadores del carrusel -->
+    <div class="carousel-indicators">
+        <button *ngFor="let slide of slides; let i = index" 
+                [class.active]="i === currentIndex"
+                (click)="setCurrentIndex(i)" 
+                [attr.aria-label]="'Slide ' + (i + 1)">
+        </button>
+    </div>
+
+    <!-- Contenedor de los elementos del carrusel -->
+    <div class="carousel-inner">
+        <div *ngFor="let slide of slides; let i = index" class="carousel-item" [class.active]="i === currentIndex">
+            <img [src]="slide.image" class="d-block w-100 carousel-image" alt="...">
+            <div class="carousel-caption">
+                <div class="characteristics">
+                    <div class="rectangule" >
+                        <p>{{ slide.description[0] }}</p>
+                    </div>
+                    <div class="rectangule" style="left: -57px;">
+                        <p>{{ slide.description[1] }}</p>
+                    </div>
+                    <div class="rectangule" style="left: -57px;">
+                        <p>{{ slide.description[2] }}</p>
+                    </div>
+                    <div class="rectangule">
+                        <p>{{ slide.description[3] }}</p>
+                    </div>
+                </div>
+            </div>
+            <img [src]="slide.logo" class="carousel-logo" alt="...">
+        </div>
+    </div>
+
+    <!-- Controles de navegación -->
+    <button class="carousel-control-left" (click)="prevSlide()">
+        <span>
+            <i class="las la-angle-left"></i>
+        </span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-right" (click)="nextSlide()">
+        <span>
+            <i class="las la-angle-right"></i>
+        </span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
