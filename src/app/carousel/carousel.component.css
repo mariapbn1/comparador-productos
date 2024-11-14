@@ -1,9 +1,7 @@
 /* Contenedor principal */
 #carousel {
-    position: absolute;
     width: 1349px;
-    height: 570px;
-    left: 0px;
+    height: auto;
     box-shadow: 0px 16px 16px -8px rgba(12, 12, 13, 0.1), 0px 4px 4px -4px rgba(12, 12, 13, 0.05);
 }
 
@@ -78,7 +76,6 @@
 
 .rectangule p {
     width: 358px;
-    /* height: 30px; */
     font-size: 14px;
     line-height: 1.2;
     color: #000000;
@@ -93,16 +90,6 @@
     display: flex;
     left: 50px;
 } 
-/* 
-.curved-line path {
-    width: 360px;
-    height: 88px;
-    left: 503.5px;
-    top: 462.5px;
-
-    border: 1px solid #000000;
-    transform: matrix(0, -1, -1, 0, 0, 0);
-} */
 
 .carousel-inner .carousel-logo {
     position: absolute;
