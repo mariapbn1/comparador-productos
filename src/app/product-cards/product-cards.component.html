@@ -1,1 +1,75 @@
-<p>product-cards works!</p>
+<div>
+    <div class="page-header">
+        <p>Comparador de Productos</p>
+    </div>
+    <div class="product-comparator">
+        <div class="product-card" *ngFor="let product of productsList">
+            <div class="product-card-header" [ngStyle]="{'background-color': product.background}">
+                <div class="product-icon">
+                    <img [src]="'asset/logos/' + product.iconImage"  alt="{{ product.name }} icon">
+                </div>
+                <div class="product-logo">
+                    <img [src]="'asset/logos/' + product.logoImage"  alt="{{ product.name }} logo">
+                </div>
+            </div>
+            <div class="product-card-content">
+                <div class="product-information">
+                    <div class="product-feature">
+                        <p class="feature-title">Propósito</p>
+                        <hr>
+                        <p class="feature-detail">{{ product.purpose }}</p>
+                    </div>
+                    <div class="product-feature">
+                        <p class="feature-title">Georreferenciación</p>
+                        <hr>
+                        <p class="feature-detail">{{ product.georeferencing }}</p>
+                    </div>
+                    <div class="product-feature">
+                        <p class="feature-title">Machine Learning</p>
+                        <hr>
+                        <div *ngIf="product.machineLearning; else elseTemplate">
+                            <i class="fa-regular fa-square-check"></i>
+                        </div>
+                        <ng-template #elseTemplate>
+                            <i class="fa-regular fa-square-minus"></i>
+                        </ng-template>
+                    </div>
+                    <div class="product-feature">
+                        <p class="feature-title">Cobertura Geográfica</p>
+                        <hr>
+                        <p class="feature-detail">{{ product.geographicCoverage }}</p>
+                    </div>
+                    <div class="product-feature">
+                        <p class="feature-title">Monitoreo en Tiempo Real</p>
+                        <hr>
+
+                        <div *ngIf="product.realTimeMonitoring === true; else notTrue">
+                            <i class="fa-regular fa-square-check"></i>
+                        </div>
+
+                        <ng-template #notTrue>
+                            <div *ngIf="product.realTimeMonitoring === false; else hasText">
+                                <i class="fa-regular fa-square-minus"></i>
+                            </div>
+                        </ng-template>
+
+                        <ng-template #hasText>
+                            <div *ngIf="product.realTimeMonitoring">
+                                <p class="feature-detail">{{ product.realTimeMonitoring }}</p>
+                            </div>
+                        </ng-template>
+                    </div>
+                    <div class="product-feature">
+                        <p class="feature-title">Usuarios Objetivos</p>
+                        <hr>
+                        <p class="feature-detail">{{ product.targetUsers }}</p>
+                    </div>
+                    <div class="product-actions">
+                        <button>Contactar con un asesor</button>
+                        <a href="">Ver mas...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

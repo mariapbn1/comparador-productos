@@ -1,5 +1,6 @@
 #body {
     height: 100%;
+    width: 100%;
     margin: 0;
     background-color: white;
     font-family: "DM Sans";
@@ -30,6 +31,8 @@
     --secondary-text-color-b: #33475B;
     --secondary--text-color-a: #676666;
     --active-color-hover: #080051;
+    --primary-color-button: #281C81;
+    --active-color-button: #402DCF;
     --info-text-color: #1A80B6;
     --error-text-color: #7A1E29;
     --error-text-color-b: #FF3F3F;
