@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 interface ProductCard {
   id: number;
@@ -62,4 +62,10 @@ export class ProductCardsComponent {
       targetUsers: 'Empresas que buscan mejorar datos',
     },
   ];
+
+  @Output() openModal = new EventEmitter<number>();
+
+  openContactForm(productId: number) {
+    this.openModal.emit(productId);
+  }
 }
