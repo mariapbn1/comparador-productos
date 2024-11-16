@@ -8,13 +8,15 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { ProductCardsComponent } from './product-cards/product-cards.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarouselComponent,
     ProductCardsComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
