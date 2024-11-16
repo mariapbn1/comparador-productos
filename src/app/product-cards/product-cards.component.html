@@ -30,6 +30,7 @@
                         <div *ngIf="product.machineLearning; else elseTemplate">
                             <i class="fa-regular fa-square-check"></i>
                         </div>
+
                         <ng-template #elseTemplate>
                             <i class="fa-regular fa-square-minus"></i>
                         </ng-template>
@@ -65,7 +66,7 @@
                         <p class="feature-detail">{{ product.targetUsers }}</p>
                     </div>
                     <div class="product-actions">
-                        <button>Contactar con un asesor</button>
+                        <button type="button" (click)="openContactForm(product.id)">Contactar con un asesor</button>
                         <a href="">Ver mas...</a>
                     </div>
                 </div>
