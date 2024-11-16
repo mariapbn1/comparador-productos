@@ -1,0 +1,130 @@
+/* Contenedor principal */
+#carousel {
+    width: 1349px;
+    height: auto;
+    box-shadow: 0px 16px 16px -8px rgba(12, 12, 13, 0.1), 0px 4px 4px -4px rgba(12, 12, 13, 0.05);
+}
+
+/* Contenedor de los indicadores (circulos abajo de la imagen)*/
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    bottom: 10px;
+}
+
+.carousel-indicators button {
+    background-color: var(--primary-text-color);
+    border: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.carousel-indicators button.active {
+    background-color: var(--active-color-hover);
+}
+
+/* Contenedor de las imagenes */
+.carousel-inner .carousel-image {
+    width: 1349px;
+    height: 570px;
+}
+
+/* Contenedor de cualquier información del contenedor de imagenes*/
+.carousel-item {
+    transition: .6s ease-in-out;
+}
+
+/* Contenedor de cualquier información dentro de la imagen*/
+.carousel-caption {
+    display: flex;
+    width: 586px;
+    height: 572px;
+    justify-content: center;
+    align-items: center;
+    top: calc(50% - 572px/2);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.characteristics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 67px;
+    width: 338px;
+    height: 409.5px;
+    left: 40px;
+    position: relative;
+}
+
+.rectangule {
+    background: #F0F0F0;
+    border: 1px solid #F0F0F0;
+    width: 370px;
+    height: 5000px;
+    border-radius: 8px 35px 35px 8px;
+    opacity: 0.71;
+    color: var(--primary-text-color);
+    display: flex;
+    position: relative;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-align: center; /* Asegura que el texto esté alineado en el centro */
+}
+
+.rectangule p {
+    width: 358px;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #000000;
+    margin: 0; /* Elimina márgenes */
+}
+
+.curved-line {
+    height: 500px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    display: flex;
+    left: 50px;
+} 
+
+.carousel-inner .carousel-logo {
+    position: absolute;
+    left: 54%;
+    top: calc(50% - 114px/2);
+    background-blend-mode: hard-light;
+    width: 400px;
+    height: 83px;
+    object-fit: contain;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Contenedor de los botones de desplazamiento*/
+.carousel-control-left, .carousel-control-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: var(--primary-text-color);
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-32px-size);
+    transition: opacity .15s ease;    
+}
+
+.carousel-control-left {
+    left: 90px;
+}
+
+.carousel-control-right {
+    right: 90px;
+}
+
+.carousel-control-left i:hover, 
+.carousel-control-right i:hover {
+    color: var(--active-color-hover);
+    opacity: .9;
+}

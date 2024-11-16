@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+#body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: white;
+    font-family: "DM Sans";
+    display: flex;
+}
+
+:root {
+    /* font weights */
+    --font-light-weight: 300;
+    --font-regular-weight: 400;
+    --font-medium-weight: 500;
+    --font-semibold-weight: 600;
+    --font-bold-weight: 700;
+
+    /* Pre-defined size */
+    --font-50px-size: 50px;
+    --font-40px-size: 40px;
+    --font-32px-size: 32px;
+    --font-24px-size: 24px;
+    --font-20px-size: 20px;
+    --font-18px-size: 18px;
+    --font-16px-size: 16px;
+    --font-12px-size: 12px;
+
+    /* Colors labels - text */
+    --primary-text-color: #000000;
+    --secondary-text-color: #212934;
+    --secondary-text-color-b: #33475B;
+    --secondary--text-color-a: #676666;
+    --active-color-hover: #080051;
+    --primary-color-button: #281C81;
+    --active-color-button: #402DCF;
+    --info-text-color: #1A80B6;
+    --error-text-color: #7A1E29;
+    --error-text-color-b: #FF3F3F;
+    --warning-text-color: #FFB545;
+}
