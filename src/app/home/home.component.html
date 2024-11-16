@@ -1,0 +1,12 @@
+<div class="main-container">
+    <!-- Carrusel -->
+    <app-carousel></app-carousel>
+
+    <!-- Tarjetas de productos -->
+    <app-product-cards (openModal)="showContactForm($event)"></app-product-cards>
+
+    <!-- Formulario de contacto modal -->
+    <app-contact-form [productId]="selectedProductId" (close)="closeModal()">
+    </app-contact-form>
+</div>
+<!-- *ngIf="isModalOpen" -->
