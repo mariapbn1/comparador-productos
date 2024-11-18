@@ -6,13 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  isModalOpen = false; // Controla si el modal está abierto o cerrado
-  selectedProductId: number | null = null;  // Almacena el ID del producto seleccionado
+  isModalOpen = false;
+  selectedProductId: number | null = null;
+  alertSuccess = false;
+  alertError = false;
 
-  // Método que se activa cuando `openModal` es emitido
   showContactForm(productId: number) {
-    this.selectedProductId = productId; // Guarda el ID
-    this.isModalOpen = true; // Abre el modal
+    this.selectedProductId = productId;
+    this.isModalOpen = true;
     console.log(this.selectedProductId);
     console.log(this.isModalOpen);
 
@@ -22,5 +23,24 @@ export class HomeComponent {
   closeModal() {
     this.isModalOpen = false;
     this.selectedProductId = null;
+  }
+
+  showAlert(type: 'success' | 'error') {
+    console.log('showAlert triggered with:', type)
+    if (type === 'success') {
+      this.alertSuccess = true;
+    } else if (type === 'error') {
+      this.alertError = true;
+    }
+
+    setTimeout(() => {
+      if (type === 'success') this.alertSuccess = false;
+      if (type === 'error') this.alertError = false;
+    }, 15000);
+  }
+
+  closeAlert(type: 'success' | 'error') {
+    if (type === 'success') this.alertSuccess = false;
+    if (type === 'error') this.alertError = false;
   }
 }

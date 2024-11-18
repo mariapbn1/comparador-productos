@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnChanges, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmailService } from '../services/email.service';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-contact-form',
@@ -10,14 +11,17 @@ import { EmailService } from '../services/email.service';
 export class ContactFormComponent implements OnInit, OnChanges {
   @Input() productId: number | null = null;
   @Output() close = new EventEmitter<void>();
+  @Output() alertEvent = new EventEmitter<'success' | 'error'>();
   isOpen = false;
   isSubmitting = false;
+  
 
   contactForm!: FormGroup;
 
   constructor(
     private fb: FormBuilder, 
-    private emailService: EmailService
+    private emailService: EmailService,
+    private homeComponent: HomeComponent
   ) { }
 
   ngOnInit() {
@@ -93,10 +97,13 @@ export class ContactFormComponent implements OnInit, OnChanges {
       this.emailService.sendEmail(emailData).subscribe(
         response => {
           console.log('Email sent successfully', response);
+          this.alertEvent.emit('success');
+          console.log('Event emitted: success');
           this.closeModal();
         },
         error => {
           console.error('Error sending email', error);
+          this.alertEvent.emit('error');
           this.isSubmitting = false;
         }
       );
