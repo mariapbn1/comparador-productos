@@ -67,7 +67,7 @@
                     </div>
                     <div class="product-actions">
                         <button type="button" (click)="openContactForm(product.id)">Contactar con un asesor</button>
-                        <a href="">Ver mas...</a>
+                        <a [href]="product.link" target="_blank" rel="noopener noreferrer">Ver mas...</a>
                     </div>
                 </div>
             </div>

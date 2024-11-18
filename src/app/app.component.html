@@ -49,11 +49,4 @@
     </div>
   </div>
 </nav>
-
-<div class="main-container">
-  <app-carousel></app-carousel>
-  <app-product-cards (openModal)="showContactForm($event)"></app-product-cards>
-  <app-contact-form [productId]="selectedProductId" (close)="closeModal()" >  </app-contact-form>
-  <router-outlet />
-</div>
-<!-- *ngIf="isModalOpen" -->
+<router-outlet /> 

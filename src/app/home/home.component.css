@@ -1,0 +1,18 @@
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.toast {
+    display: block !important;
+}
+ 
+
+@media (min-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+}
