@@ -6,6 +6,7 @@ interface ProductCard {
   iconImage: string,
   logoImage: string,
   background: string,
+  link: string,
   purpose: string;
   georeferencing: string;
   machineLearning: boolean;
@@ -28,6 +29,7 @@ export class ProductCardsComponent {
       iconImage: 'Geomarketing-icon-logo.png',
       logoImage: 'Geomarketing-name-logo.png',
       background: 'rgba(105, 252, 180, 0.33)',
+      link: 'https://storage.googleapis.com/documentation-products/GEOMARKETING.pdf',
       purpose: 'Toma de decisiones estratégicas',
       georeferencing: 'Análisis de cliente y puntos de venta',
       machineLearning: false,
@@ -40,6 +42,7 @@ export class ProductCardsComponent {
       iconImage: 'Datarutas-icon-logo.png',
       logoImage: 'Datarutas-name-logo.png',
       background: 'rgba(168, 68, 209, 0.25)',
+      link: 'https://storage.googleapis.com/documentation-products/DATARUTAS.pdf',
       name: 'Datarutas',
       purpose: 'Optimización de rutas y logística',
       georeferencing: 'Georreferenciación directa e inversa',
@@ -53,6 +56,7 @@ export class ProductCardsComponent {
       iconImage: 'Dataquality-icon-logo.png',
       logoImage: 'Dataquality-name-logo.png',
       background: 'rgba(52, 44, 147, 0.22)',
+      link: 'https://storage.googleapis.com/documentation-products/SITIDATA.pdf',
       name: 'DataQuality',
       purpose: 'Calidad y gestión de datos',
       georeferencing: 'Validación y enriquecimiento de direcciones',
