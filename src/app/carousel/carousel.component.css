@@ -32,6 +32,10 @@
     height: 570px;
 }
 
+.product-card-header {
+    opacity: 20%;
+}
+
 /* Contenedor de cualquier información del contenedor de imagenes*/
 .carousel-item {
     transition: .6s ease-in-out;
@@ -72,6 +76,10 @@
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
     text-align: center; /* Asegura que el texto esté alineado en el centro */
+}
+
+.rectangule-left {
+    left: -57px;
 }
 
 .rectangule p {

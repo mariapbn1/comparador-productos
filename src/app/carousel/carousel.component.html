@@ -1,10 +1,7 @@
 <div id="carousel" class="carousel">
     <!-- Indicadores del carrusel -->
     <div class="carousel-indicators">
-        <button *ngFor="let slide of slides; let i = index" 
-                [class.active]="i === currentIndex"
-                (click)="setCurrentIndex(i)" 
-                [attr.aria-label]="'Slide ' + (i + 1)">
+        <button *ngFor="let slide of slides; let i = index"  [class.active]="i === currentIndex" (click)="setCurrentIndex(i)"  [attr.aria-label]="'Slide ' + (i + 1)">
         </button>
     </div>
 
@@ -17,10 +14,10 @@
                     <div class="rectangule" >
                         <p>{{ slide.description[0] }}</p>
                     </div>
-                    <div class="rectangule" style="left: -57px;">
+                    <div class="rectangule rectangule-left">
                         <p>{{ slide.description[1] }}</p>
                     </div>
-                    <div class="rectangule" style="left: -57px;">
+                    <div class="rectangule rectangule-left">
                         <p>{{ slide.description[2] }}</p>
                     </div>
                     <div class="rectangule">
