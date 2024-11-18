@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, OnChanges, OnInit } from '@angu
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmailService } from '../services/email.service';
 import { HomeComponent } from '../home/home.component';
+import { InsertBigqueryService } from '../services/insert-bigquery.services';
 
 @Component({
   selector: 'app-contact-form',
@@ -21,7 +22,8 @@ export class ContactFormComponent implements OnInit, OnChanges {
   constructor(
     private fb: FormBuilder, 
     private emailService: EmailService,
-    private homeComponent: HomeComponent
+    private homeComponent: HomeComponent,
+    private insertBigqueryService: InsertBigqueryService
   ) { }
 
   ngOnInit() {
@@ -94,12 +96,32 @@ export class ContactFormComponent implements OnInit, OnChanges {
         body: body_email
       };
 
+      const bigQueryData = {
+        name: formValues.name,
+        lastname: formValues.lastname,
+        email: formValues.email,
+        contact_number: +formValues.contactNumber,
+        company_name: formValues.companyName,
+        country: formValues.country,
+        interest_product: interestProductValue,
+        message: formValues.message
+      }
+      console.log(bigQueryData);
+      
       this.emailService.sendEmail(emailData).subscribe(
         response => {
           console.log('Email sent successfully', response);
           this.alertEvent.emit('success');
           console.log('Event emitted: success');
           this.closeModal();
+          this.insertBigqueryService.insertToBigQuery(bigQueryData).subscribe(
+            response => {
+              console.log('Row inserted successfully');
+            },
+            error => {
+              console.log('Failed to insert row.');
+            }
+          )
         },
         error => {
           console.error('Error sending email', error);
